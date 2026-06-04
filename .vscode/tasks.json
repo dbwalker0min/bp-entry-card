@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "sls",
+      "type": "shell",
+      "command": "uv run --no-project --python 3.12 python -m http.server 8001",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Open test page",
+      "type": "shell",
+      "command": "Start-Process http://localhost:8001/test/",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy to Home Assistant",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\Deploy-BpEntryCard.ps1",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
