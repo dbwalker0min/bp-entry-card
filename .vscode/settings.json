@@ -1,17 +1,3 @@
 {
-  "taskButtons.buttons": [
-    {
-      "task": "sls",
-      "buttonLabel": "Server $(server)"
-    },
-    {
-      "task": "Open test page",
-      "buttonLabel": "Open $(globe)"
-    },
-    {
-      "task": "Deploy to Home Assistant",
-      "buttonLabel": "Deploy $(cloud-upload)"
-    }
-  ],
   "editor.linkedEditing": true
 }

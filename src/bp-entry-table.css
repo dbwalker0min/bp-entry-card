@@ -1,0 +1,70 @@
+.bp-table {
+  border-collapse: separate;
+  border-spacing: 0 0.45rem;
+  --bp-field-width: 4ch;
+  --bp-entry-width: calc((3 * var(--bp-field-width)) + 2ch + (4 * 0.4rem));
+}
+
+.bp-table td {
+  vertical-align: middle;
+}
+
+.bp-time-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: max-content;
+}
+
+.bp-label {
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+  padding-right: 0.45rem;
+}
+
+.bp-reading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: max-content;
+}
+
+.bp-time {
+  width: var(--bp-entry-width);
+  min-width: var(--bp-entry-width);
+  box-sizing: border-box;
+}
+
+.bp-number {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.bp-field {
+  width: var(--bp-field-width);
+}
+
+.bp-number::-webkit-outer-spin-button,
+.bp-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bp-now,
+.bp-save {
+  font: inherit;
+  box-sizing: border-box;
+  height: 2.45rem;
+  padding: 0 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--divider-color, #d1d5db);
+  background: var(--primary-color, #2563eb);
+  color: var(--primary-text-color, #ffffff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}

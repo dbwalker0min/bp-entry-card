@@ -1,0 +1,47 @@
+<ha-card header="Blood Pressure">
+  <div class="card-content">
+    <div class="bp-table">
+      <div class="bp-label">Time</div>
+      <input id="time" class="bp-time" type="datetime-local">
+      <button id="now" type="button" class="bp-now">Now</button>
+
+      <div class="bp-label">Reading</div>
+      <div class="bp-reading" id="reading-row">
+        <input
+          id="systolic"
+          class="bp-number bp-field"
+          type="number"
+          inputmode="numeric"
+          min="1"
+          step="1"
+          placeholder="120"
+          aria-label="Systolic"
+        >
+        <span aria-hidden="true">/</span>
+        <input
+          id="diastolic"
+          class="bp-number bp-field"
+          type="number"
+          inputmode="numeric"
+          min="1"
+          step="1"
+          placeholder="80"
+          aria-label="Diastolic"
+        >
+        <span aria-hidden="true">&hearts;</span>
+        <input
+          id="pulse"
+          class="bp-number bp-field"
+          type="number"
+          inputmode="numeric"
+          min="1"
+          step="1"
+          placeholder="72"
+          aria-label="Pulse"
+        >
+        <button id="save" type="button" class="bp-save">Save</button>
+      </div>
+    </div>
+    <div id="status"></div>
+  </div>
+</ha-card>

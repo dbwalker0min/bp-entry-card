@@ -1,5 +1,6 @@
 $Ha = "hassio@ha.home"
-$LocalFile = ".\src\bp-entry-card.js"
+$RepoRoot = Split-Path -Parent $PSScriptRoot
+$LocalFile = Join-Path $RepoRoot "src\bp-entry-card.js"
 $RemoteDir = "/config/www/bp-entry-card"
 $RemoteTmp = "/tmp/bp-entry-card.js"
 $RemoteFile = "$RemoteDir/bp-entry-card.js"
