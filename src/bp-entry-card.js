@@ -18,8 +18,8 @@ class BpEntryCard extends HTMLElement {
     const version = new URL(import.meta.url).searchParams.get("v") ?? String(Date.now());
 
     const [cssResponse, htmlResponse] = await Promise.all([
-      fetch(new URL(`./bp-entry-table.css?v=${encodeURIComponent(version)}`, import.meta.url)),
-      fetch(new URL(`./bp-entry-card-table.html?v=${encodeURIComponent(version)}`, import.meta.url)),
+      fetch(new URL(`./bp-entry-card.css?v=${encodeURIComponent(version)}`, import.meta.url)),
+      fetch(new URL(`./bp-entry-card.html?v=${encodeURIComponent(version)}`, import.meta.url)),
     ]);
 
     if (!cssResponse.ok || !htmlResponse.ok) {

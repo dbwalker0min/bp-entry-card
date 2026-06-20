@@ -1,47 +1,49 @@
-<ha-card header="Blood Pressure">
-  <div class="card-content">
-    <div class="bp-table">
-      <div class="bp-label">Time</div>
-      <input id="time" class="bp-time" type="datetime-local">
-      <button id="now" type="button" class="bp-now">Now</button>
+<bp-control>
+  <!-- First row -->
+  <span class="label-cell">Time:</span>
+  <input
+    id="time"
+    class="bp-time"
+    type="datetime-local"
+  />
+  <button type="button" id="now" class="bp-button">Now</button>
+  
+  <!-- Second row -->
+  <span>Sample:</span>
 
-      <div class="bp-label">Reading</div>
-      <div class="bp-reading" id="reading-row">
-        <input
-          id="systolic"
-          class="bp-number bp-field"
-          type="number"
-          inputmode="numeric"
-          min="1"
-          step="1"
-          placeholder="120"
-          aria-label="Systolic"
-        >
-        <span aria-hidden="true">/</span>
-        <input
-          id="diastolic"
-          class="bp-number bp-field"
-          type="number"
-          inputmode="numeric"
-          min="1"
-          step="1"
-          placeholder="80"
-          aria-label="Diastolic"
-        >
-        <span aria-hidden="true">&hearts;</span>
-        <input
-          id="pulse"
-          class="bp-number bp-field"
-          type="number"
-          inputmode="numeric"
-          min="1"
-          step="1"
-          placeholder="72"
-          aria-label="Pulse"
-        >
-        <button id="save" type="button" class="bp-save">Save</button>
-      </div>
-    </div>
-    <div id="status"></div>
-  </div>
-</ha-card>
+  <bp-sample> 
+    <input
+      id="systolic"
+      class="bp-number"
+      type="number"
+      inputmode="numeric"
+      min="1"
+      step="1"
+      placeholder="120"
+      aria-label="Systolic"
+    />
+    <span>/</span>
+    <input
+      id="diastolic"
+      class="bp-number bp-field"
+      type="number"
+      inputmode="numeric"
+      min="1"
+      step="1"
+      placeholder="80"
+      aria-label="Diastolic"
+    />
+    <span class="red-char">&hearts;</span>
+      <input
+      id="pulse"
+      class="bp-number bp-field"
+      type="number"
+      inputmode="numeric"
+      min="1"
+      step="1"
+      placeholder="72"
+      aria-label="Pulse"
+    />
+  </bp-sample>
+  <button type="button" id="save" class="bp-button">Save</button>
+</bp-control>
