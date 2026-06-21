@@ -10,6 +10,7 @@ bp-control {
 bp-sample {
   display: flex;
   column-gap: 2px;
+  align-items: center;
 }
 
 .red-char {
@@ -17,8 +18,27 @@ bp-sample {
 }
 .bp-number {
   width: 3ch;
+  height: 2.5rem;
 }
 .bp-number::-webkit-outer-spin-button,
 .bp-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.bp-time,
+.bp-button {
+  height: 2.5rem;
+  margin: 0;
+}
+
+bp-control {
+  outline: 2px solid red;
+}
+
+bp-control > * {
+  outline: 1px solid blue;
+}
+
+bp-sample > * {
+  outline: 1px solid green;
 }
