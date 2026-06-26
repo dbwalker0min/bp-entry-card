@@ -1,20 +1,19 @@
 $Ha = "hassio@ha.home"
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$LocalFile = Join-Path $RepoRoot "src\bp-entry-card.js"
+$LocalSrcDir = Join-Path $RepoRoot "src"
 $RemoteDir = "/config/www/bp-entry-card"
-$RemoteTmp = "/tmp/bp-entry-card.js"
-$RemoteFile = "$RemoteDir/bp-entry-card.js"
+$RemoteTmpDir = "/tmp/bp-entry-card-src"
 
-scp -O $LocalFile "$Ha`:$RemoteTmp"
+scp -O -r $LocalSrcDir "$Ha`:$RemoteTmpDir"
 
 if ($LASTEXITCODE -ne 0) {
     throw "scp failed"
 }
 
-ssh $Ha "sudo mkdir -p $RemoteDir && sudo mv $RemoteTmp $RemoteFile && sudo chmod 644 $RemoteFile"
+ssh $Ha "sudo rm -rf '$RemoteDir' && sudo mkdir -p '$RemoteDir' && sudo cp -a '$RemoteTmpDir/.' '$RemoteDir/' && sudo chmod -R a+rX '$RemoteDir' && sudo rm -rf '$RemoteTmpDir'"
 
 if ($LASTEXITCODE -ne 0) {
     throw "remote install failed"
 }
 
-Write-Host "Deployed to $RemoteFile"
+Write-Host "Deployed all files from $LocalSrcDir to $RemoteDir"

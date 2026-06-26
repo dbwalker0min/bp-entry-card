@@ -17,7 +17,9 @@
     {
       "label": "Open test page",
       "type": "shell",
-      "command": "open \"http://localhost:8001/test/?v=$(date +%s)\"",
+      "osx": {
+        "command": "open \"http://localhost:8001/test/?v=$(date +%s)\""
+      },
       "windows": {
         "command": "powershell -NoProfile -Command \"Start-Process ('http://localhost:8001/test/?v=' + [DateTimeOffset]::UtcNow.ToUnixTimeSeconds())\""
       },
@@ -35,7 +37,10 @@
     {
       "label": "Deploy to Home Assistant",
       "type": "shell",
-      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\Deploy-BpEntryCard.ps1",
+      "command": "./scripts/deploy-bp-entry-card.sh",
+      "windows": {
+        "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\Deploy-BpEntryCard.ps1"
+      },
       "options": {
         "cwd": "${workspaceFolder}",
         "statusbar": {
